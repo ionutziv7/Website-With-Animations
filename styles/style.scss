@@ -26,6 +26,7 @@ body {
   color: #fff;
   font-size: $font-primary;
   background-color: #000;
+  overflow-x: hidden;
 }
 
 .header {
@@ -101,6 +102,18 @@ body {
 }
 
 .main-content {
+  section {
+    position: relative;
+    .section-filler {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      z-index: 5;
+      background-color: #000;
+    }
+  }
   .section-stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -138,6 +151,7 @@ body {
       grid-template-columns: repeat(2, 1fr);
       grid-gap: 2rem;
       margin: 6rem 0;
+      overflow: hidden;
     }
     .big-text {
       font-weight: 800;
@@ -157,7 +171,7 @@ body {
       transition: $trans;
       cursor: default;
       &:hover {
-        transform: scale(1.07) !important;
+        transform: scale(1.1) !important;
       }
     }
     .team-content {
@@ -257,17 +271,23 @@ body {
           color: $color-light-2;
           opacity: 0.5;
         }
-        .input-control {
-          input {
-            background-color: #000;
-          }
-          button {
-            background-color: #5f5ff6;
-          }
+      }
+      .input-control {
+        input {
+          background-color: #000;
+        }
+        button {
+          background-color: #5f5ff6;
         }
       }
     }
   }
+}
+
+.footer {
+  padding: 6rem 0;
+  text-align: center;
+  background-color: rgba(240, 238, 255, 0.1);
 }
 
 // Reusable styles
@@ -328,4 +348,14 @@ body {
   border-radius: 5px;
   font-size: 0.8rem;
   text-transform: uppercase;
+}
+
+.cursor {
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 50%;
+  border: 2px solid #2bc48a;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }

@@ -15,6 +15,7 @@ body {
   color: #fff;
   font-size: 1.2rem;
   background-color: #000;
+  overflow-x: hidden;
 }
 
 .header {
@@ -85,6 +86,18 @@ body {
   color: rgba(255, 255, 255, 0.171);
 }
 
+.main-content section {
+  position: relative;
+}
+.main-content section .section-filler {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 5;
+  background-color: #000;
+}
 .main-content .section-stats {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -120,6 +133,7 @@ body {
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
   margin: 6rem 0;
+  overflow: hidden;
 }
 .main-content .section-plans .big-text {
   font-weight: 800;
@@ -139,7 +153,7 @@ body {
   cursor: default;
 }
 .main-content .section-plans .team:hover {
-  transform: scale(1.07) !important;
+  transform: scale(1.1) !important;
 }
 .main-content .section-plans .team-content {
   padding: 2rem;
@@ -235,11 +249,17 @@ body {
   color: #f0eeff;
   opacity: 0.5;
 }
-.main-content .section-contact .contact-info .left-contact .input-control input {
+.main-content .section-contact .contact-info .input-control input {
   background-color: #000;
 }
-.main-content .section-contact .contact-info .left-contact .input-control button {
+.main-content .section-contact .contact-info .input-control button {
   background-color: #5f5ff6;
+}
+
+.footer {
+  padding: 6rem 0;
+  text-align: center;
+  background-color: rgba(240, 238, 255, 0.1);
 }
 
 .input-control {
@@ -298,4 +318,14 @@ body {
   border-radius: 5px;
   font-size: 0.8rem;
   text-transform: uppercase;
+}
+
+.cursor {
+  width: 3.8rem;
+  height: 3.8rem;
+  border-radius: 50%;
+  border: 2px solid #2bc48a;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }/*# sourceMappingURL=style.css.map */
